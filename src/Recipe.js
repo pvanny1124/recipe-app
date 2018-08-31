@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import './Recipe.css';
 
 class Recipe extends Component {
+    static PropTypes = {
+        title: PropTypes.string.isRequired,
+        ingredients: PropTypes.arrayOf(ProtoType.string).isRequired,
+        instructions: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired
+    }
+    
     render() {
         const { title, img, instructions } = this.props
         const ingredients = this.props.ingredients.map((ing, index) => (
